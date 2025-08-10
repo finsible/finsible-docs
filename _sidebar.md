@@ -1,7 +1,6 @@
 <!-- _sidebar.md -->
 
--   [Home](/)
--   [Overview](README.md)
+-   [Overview](/README.md)
 
 **Platform Repositories**
 
