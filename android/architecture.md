@@ -1,4 +1,4 @@
-# Architecture Overview
+\*\*\*\*# Architecture Overview
 
 Finsible follows modern Android development best practices with a clean, scalable architecture that separates concerns and enables easy testing and maintenance.
 
