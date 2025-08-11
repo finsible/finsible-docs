@@ -827,6 +827,522 @@
                 margin-top: var(--spacing-md);
             }
 
+            /* Hero Section Styles */
+            .hero-section {
+                max-width: 900px;
+                margin: 0 auto 4rem auto;
+                text-align: center;
+                padding: 0 2rem;
+            }
+
+            .hero-title {
+                font-size: 3.5rem;
+                font-weight: 700;
+                background: linear-gradient(135deg, #42a585 0%, #61dafb 70%, #ffffff 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                margin: 0 0 1.5rem 0;
+                line-height: 1.1;
+                letter-spacing: -0.02em;
+            }
+
+            .hero-description {
+                font-size: 1.4rem;
+                color: #e6edf3;
+                opacity: 0.9;
+                line-height: 1.6;
+                margin: 0 auto 2rem auto;
+                max-width: 700px;
+                font-weight: 400;
+            }
+
+            .hero-badges {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                justify-content: center;
+                margin-top: 2rem;
+            }
+
+            /* Platform Summary Grid */
+            .platform-summary {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+                gap: 2rem;
+                margin: 3rem 0;
+                max-width: 1200px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            /* Platform Tile Base Style */
+            .platform-tile {
+                border-radius: 16px;
+                padding: 2rem;
+                height: 300px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                position: relative;
+                overflow: hidden;
+                transition: all 0.3s ease;
+            }
+
+            .platform-tile.android {
+                background: linear-gradient(135deg, rgba(52, 168, 83, 0.08) 0%, rgba(66, 165, 133, 0.05) 100%);
+                border: 1px solid rgba(52, 168, 83, 0.2);
+            }
+
+            .platform-tile.web {
+                background: linear-gradient(135deg, rgba(97, 218, 251, 0.08) 0%, rgba(66, 165, 133, 0.05) 100%);
+                border: 1px solid rgba(97, 218, 251, 0.2);
+            }
+
+            .platform-tile.backend {
+                background: linear-gradient(135deg, rgba(109, 179, 63, 0.08) 0%, rgba(66, 165, 133, 0.05) 100%);
+                border: 1px solid rgba(109, 179, 63, 0.2);
+            }
+
+            /* Platform Tile Glow Effect */
+            .platform-tile::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                right: -30%;
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+            }
+
+            .platform-tile.android::before {
+                background: radial-gradient(circle, rgba(52, 168, 83, 0.1) 0%, transparent 70%);
+            }
+
+            .platform-tile.web::before {
+                background: radial-gradient(circle, rgba(97, 218, 251, 0.1) 0%, transparent 70%);
+            }
+
+            .platform-tile.backend::before {
+                background: radial-gradient(circle, rgba(109, 179, 63, 0.1) 0%, transparent 70%);
+            }
+
+            /* Platform Header */
+            .platform-header {
+                position: relative;
+                z-index: 2;
+            }
+
+            .platform-title-section {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .platform-icon {
+                width: 60px;
+                height: 60px;
+                border-radius: 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+            }
+
+            .platform-icon.android {
+                background: linear-gradient(135deg, #34a853 0%, #42a585 100%);
+            }
+
+            .platform-icon.web {
+                background: linear-gradient(135deg, #61dafb 0%, #42a585 100%);
+            }
+
+            .platform-icon.backend {
+                background: linear-gradient(135deg, #6db33f 0%, #42a585 100%);
+            }
+
+            .platform-title {
+                margin: 0;
+                font-size: 1.75rem;
+                font-weight: 700;
+                color: #ffffff;
+            }
+
+            .platform-tags {
+                display: flex;
+                gap: 0.75rem;
+                margin-bottom: 1.5rem;
+                flex-wrap: wrap;
+            }
+
+            .platform-tag {
+                padding: 0.4rem 0.8rem;
+                border-radius: 20px;
+                font-size: 0.75rem;
+                font-weight: 600;
+                border-width: 1px;
+                border-style: solid;
+            }
+
+            /* Platform Footer */
+            .platform-footer {
+                position: relative;
+                z-index: 2;
+            }
+
+            .platform-info {
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 12px;
+                padding: 1rem;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .platform-info-row {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 0.5rem;
+            }
+
+            .platform-info-row:last-child {
+                margin-bottom: 0;
+            }
+
+            .platform-info-label {
+                color: #e6edf3;
+                font-size: 0.9rem;
+                opacity: 0.8;
+            }
+
+            .platform-info-link {
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 0.9rem;
+            }
+
+            .platform-info-link.repository {
+                color: #42a585;
+            }
+
+            .platform-info-link.maintainer {
+                color: #61dafb;
+            }
+
+            /* Quick Start Section */
+            .quick-start-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 2rem;
+                margin: 3rem 0;
+                max-width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            /* Contact Section */
+            .contact-section {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+                margin: 3rem 0;
+                max-width: 900px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            /* Info Card Base Style */
+            .info-card {
+                border-radius: 16px;
+                padding: 2rem;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .info-card.developers {
+                background: linear-gradient(135deg, rgba(66, 165, 133, 0.08) 0%, rgba(97, 218, 251, 0.05) 100%);
+                border: 1px solid rgba(66, 165, 133, 0.2);
+            }
+
+            .info-card.users {
+                background: linear-gradient(135deg, rgba(97, 218, 251, 0.08) 0%, rgba(66, 165, 133, 0.05) 100%);
+                border: 1px solid rgba(97, 218, 251, 0.2);
+            }
+
+            .info-card.team {
+                background: linear-gradient(135deg, rgba(66, 165, 133, 0.08) 0%, rgba(97, 218, 251, 0.05) 100%);
+                border: 1px solid rgba(66, 165, 133, 0.2);
+            }
+
+            .info-card.help {
+                background: linear-gradient(135deg, rgba(97, 218, 251, 0.08) 0%, rgba(66, 165, 133, 0.05) 100%);
+                border: 1px solid rgba(97, 218, 251, 0.2);
+            }
+
+            /* Info Card Glow Effect */
+            .info-card::before {
+                content: '';
+                position: absolute;
+                top: -30%;
+                right: -30%;
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+            }
+
+            .info-card.developers::before {
+                background: radial-gradient(circle, rgba(66, 165, 133, 0.1) 0%, transparent 70%);
+            }
+
+            .info-card.users::before,
+            .info-card.help::before {
+                background: radial-gradient(circle, rgba(97, 218, 251, 0.1) 0%, transparent 70%);
+            }
+
+            .info-card.team::before {
+                background: radial-gradient(circle, rgba(66, 165, 133, 0.1) 0%, transparent 70%);
+            }
+
+            /* Info Card Content */
+            .info-card-content {
+                position: relative;
+                z-index: 2;
+            }
+
+            .info-card-header {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .info-card-icon {
+                width: 50px;
+                height: 50px;
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .info-card-icon.developers,
+            .info-card-icon.team {
+                background: linear-gradient(135deg, #42a585 0%, #61dafb 100%);
+            }
+
+            .info-card-icon.users,
+            .info-card-icon.help {
+                background: linear-gradient(135deg, #61dafb 0%, #42a585 100%);
+            }
+
+            .info-card-title {
+                margin: 0;
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #ffffff;
+            }
+
+            .info-card-list {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .info-card-item {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                padding: 0.75rem;
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 8px;
+                border: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .info-card-item.row {
+                justify-content: space-between;
+            }
+
+            .info-card-dot {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                flex-shrink: 0;
+            }
+
+            .info-card-dot.primary {
+                background: #42a585;
+            }
+
+            .info-card-dot.secondary {
+                background: #61dafb;
+            }
+
+            .info-card-text {
+                color: #e6edf3;
+                font-size: 0.9rem;
+                line-height: 1.4;
+                margin: 0;
+            }
+
+            .info-card-label {
+                color: #e6edf3;
+                font-size: 0.9rem;
+                font-weight: 600;
+            }
+
+            .info-card-link {
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 0.9rem;
+            }
+
+            .info-card-link.primary {
+                color: #42a585;
+            }
+
+            .info-card-link.secondary {
+                color: #61dafb;
+            }
+
+            /* Repository Links Section */
+            .repository-links {
+                max-width: 800px;
+                margin: 4rem auto 0 auto;
+                text-align: center;
+                padding: 0 2rem;
+            }
+
+            .repository-buttons {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1.5rem;
+                justify-content: center;
+                margin-bottom: 3rem;
+            }
+
+            .repository-button {
+                border-radius: 16px;
+                padding: 1rem 2rem;
+                text-decoration: none;
+                font-weight: 700;
+                font-size: 1rem;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                backdrop-filter: blur(10px);
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                position: relative;
+                overflow: hidden;
+                border: 2px solid;
+            }
+
+            .repository-button.android {
+                background: linear-gradient(135deg, rgba(52, 168, 83, 0.12) 0%, rgba(52, 168, 83, 0.06) 100%);
+                border-color: rgba(52, 168, 83, 0.3);
+                color: #34a853;
+                box-shadow: 0 6px 20px rgba(52, 168, 83, 0.15);
+            }
+
+            .repository-button.web {
+                background: linear-gradient(135deg, rgba(97, 218, 251, 0.12) 0%, rgba(97, 218, 251, 0.06) 100%);
+                border-color: rgba(97, 218, 251, 0.3);
+                color: #61dafb;
+                box-shadow: 0 6px 20px rgba(97, 218, 251, 0.15);
+            }
+
+            .repository-button.backend {
+                background: linear-gradient(135deg, rgba(109, 179, 63, 0.12) 0%, rgba(109, 179, 63, 0.06) 100%);
+                border-color: rgba(109, 179, 63, 0.3);
+                color: #6db33f;
+                box-shadow: 0 6px 20px rgba(109, 179, 63, 0.15);
+            }
+
+            .repository-button:hover {
+                transform: translateY(-2px);
+            }
+
+            .repository-button.android:hover {
+                box-shadow: 0 8px 30px rgba(52, 168, 83, 0.25);
+                border-color: rgba(52, 168, 83, 0.5);
+            }
+
+            .repository-button.web:hover {
+                box-shadow: 0 8px 30px rgba(97, 218, 251, 0.25);
+                border-color: rgba(97, 218, 251, 0.5);
+            }
+
+            .repository-button.backend:hover {
+                box-shadow: 0 8px 30px rgba(109, 179, 63, 0.25);
+                border-color: rgba(109, 179, 63, 0.5);
+            }
+
+            /* Footer Message */
+            .footer-message {
+                background: linear-gradient(135deg, rgba(66, 165, 133, 0.08) 0%, rgba(97, 218, 251, 0.05) 100%);
+                border: 1px solid rgba(66, 165, 133, 0.2);
+                border-radius: 20px;
+                padding: 2rem;
+                backdrop-filter: blur(10px);
+                position: relative;
+                overflow: hidden;
+            }
+
+            .footer-message::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                right: -20%;
+                width: 200px;
+                height: 200px;
+                background: radial-gradient(circle, rgba(66, 165, 133, 0.1) 0%, transparent 70%);
+                border-radius: 50%;
+            }
+
+            .footer-message-content {
+                position: relative;
+                z-index: 2;
+            }
+
+            .footer-message-text {
+                font-size: 1.25rem;
+                font-weight: 600;
+                margin: 0;
+                background: linear-gradient(135deg, #42a585 0%, #61dafb 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.75rem;
+                flex-wrap: wrap;
+            }
+
+            /* Heartbeat animation for footer */
+            @keyframes heartbeat {
+                0% {
+                    transform: scale(1);
+                }
+                14% {
+                    transform: scale(1.3);
+                }
+                28% {
+                    transform: scale(1);
+                }
+                42% {
+                    transform: scale(1.3);
+                }
+                70% {
+                    transform: scale(1);
+                }
+            }
+
+            .heartbeat-icon {
+                animation: heartbeat 1.5s ease-in-out infinite;
+            }
+
             /* ========================================
                TABLE STYLES
                ======================================== */
@@ -923,6 +1439,101 @@
 
             .markdown-section img[alt*='badge']:hover {
                 transform: translateY(-1px);
+            }
+
+            /* Modern Badge Styles - Reusable across all .md files */
+            .modern-badge {
+                background: linear-gradient(135deg, rgba(66, 165, 133, 0.15) 0%, rgba(66, 165, 133, 0.08) 100%);
+                border: 1px solid rgba(66, 165, 133, 0.3);
+                border-radius: 50px;
+                padding: 0.75rem 1.5rem;
+                color: #42a585;
+                font-weight: 700;
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+                backdrop-filter: blur(10px);
+                box-shadow: 0 4px 12px rgba(66, 165, 133, 0.15);
+                transition: all 0.3s ease;
+                cursor: default;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                margin: 0.25rem;
+            }
+
+            .modern-badge.android {
+                background: linear-gradient(135deg, rgba(52, 168, 83, 0.15) 0%, rgba(52, 168, 83, 0.08) 100%);
+                border: 1px solid rgba(52, 168, 83, 0.3);
+                color: #34a853;
+                box-shadow: 0 4px 12px rgba(52, 168, 83, 0.15);
+            }
+
+            .modern-badge.react {
+                background: linear-gradient(135deg, rgba(97, 218, 251, 0.15) 0%, rgba(97, 218, 251, 0.08) 100%);
+                border: 1px solid rgba(97, 218, 251, 0.3);
+                color: #61dafb;
+                box-shadow: 0 4px 12px rgba(97, 218, 251, 0.15);
+            }
+
+            .modern-badge.spring {
+                background: linear-gradient(135deg, rgba(109, 179, 63, 0.15) 0%, rgba(109, 179, 63, 0.08) 100%);
+                border: 1px solid rgba(109, 179, 63, 0.3);
+                color: #6db33f;
+                box-shadow: 0 4px 12px rgba(109, 179, 63, 0.15);
+            }
+
+            .modern-badge.typescript {
+                background: linear-gradient(135deg, rgba(49, 120, 198, 0.15) 0%, rgba(49, 120, 198, 0.08) 100%);
+                border: 1px solid rgba(49, 120, 198, 0.3);
+                color: #3178c6;
+                box-shadow: 0 4px 12px rgba(49, 120, 198, 0.15);
+            }
+
+            .modern-badge.kotlin {
+                background: linear-gradient(135deg, rgba(127, 82, 255, 0.15) 0%, rgba(127, 82, 255, 0.08) 100%);
+                border: 1px solid rgba(127, 82, 255, 0.3);
+                color: #7f52ff;
+                box-shadow: 0 4px 12px rgba(127, 82, 255, 0.15);
+            }
+
+            .modern-badge.postgresql {
+                background: linear-gradient(135deg, rgba(51, 103, 145, 0.15) 0%, rgba(51, 103, 145, 0.08) 100%);
+                border: 1px solid rgba(51, 103, 145, 0.3);
+                color: #336791;
+                box-shadow: 0 4px 12px rgba(51, 103, 145, 0.15);
+            }
+
+            .modern-badge.compose {
+                background: linear-gradient(135deg, rgba(66, 133, 244, 0.15) 0%, rgba(66, 133, 244, 0.08) 100%);
+                border: 1px solid rgba(66, 133, 244, 0.3);
+                color: #4285f4;
+                box-shadow: 0 4px 12px rgba(66, 133, 244, 0.15);
+            }
+
+            /* Badge container for flex layouts */
+            .badge-container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                justify-content: center;
+                margin-bottom: 3rem;
+                padding: 0 1rem;
+            }
+
+            /* Small feature badges */
+            .feature-badge {
+                padding: 0.75rem 1.5rem;
+                background: rgba(66, 165, 133, 0.1);
+                border-radius: 50px;
+                border: 1px solid rgba(66, 165, 133, 0.3);
+                color: #42a585;
+                font-weight: 600;
+                font-size: 0.9rem;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                margin: 0.25rem;
             }
 
             /* ========================================
@@ -1058,6 +1669,60 @@
 
                 .floating-symbol {
                     font-size: 18px;
+                }
+
+                /* Mobile adjustments for new components */
+                .hero-title {
+                    font-size: 2.5rem;
+                }
+
+                .hero-description {
+                    font-size: 1.2rem;
+                }
+
+                .platform-summary {
+                    grid-template-columns: 1fr;
+                    gap: 1.5rem;
+                }
+
+                .platform-tile {
+                    height: auto;
+                    min-height: 280px;
+                }
+
+                .quick-start-grid {
+                    grid-template-columns: 1fr;
+                    gap: 1.5rem;
+                }
+
+                .contact-section {
+                    grid-template-columns: 1fr;
+                    gap: 1.5rem;
+                }
+
+                .repository-buttons {
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 1rem;
+                }
+
+                .repository-button {
+                    width: 100%;
+                    max-width: 300px;
+                    justify-content: center;
+                }
+
+                .footer-message-text {
+                    font-size: 1.1rem;
+                }
+
+                .badge-container {
+                    padding: 0 0.5rem;
+                }
+
+                .modern-badge {
+                    font-size: 0.8rem;
+                    padding: 0.6rem 1.2rem;
                 }
             }
         </style>

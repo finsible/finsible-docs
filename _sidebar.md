@@ -2,11 +2,11 @@
 
 -   [Overview](/README.md)
 
-**Platform Repositories**
+**Quick Links**
 
--   [Android Client](https://github.com/finsible/android-client)
--   [Web Client](https://github.com/finsible/web-client)
--   [Backend API](https://github.com/finsible/finsible-backend)
+-   [Android Repository](https://github.com/finsible/android-client)
+-   [Web Repository](https://github.com/finsible/web-client)
+-   [Backend Repository](https://github.com/finsible/finsible-backend)
 
 **Android Client**
 
