@@ -10,7 +10,7 @@
 
 **Android Client**
 
--   [Overview](android/README.md)
+-   [Overview](android/overview.md)
 -   [Setup & Installation](android/setup.md)
 -   [Development Guide](android/development.md)
 -   [Architecture](android/architecture.md)
