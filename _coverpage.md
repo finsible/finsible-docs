@@ -133,7 +133,7 @@
 <!-- Footer Buttons -->
 
 <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin: 2.5rem 0;">
-    <a href="#/README" style="display: inline-block; padding: 0.85rem 2rem; font-size: 1.1rem; font-weight: 600; border-radius: 12px; background: linear-gradient(135deg, #42a585 0%, #61dafb 100%); color: #fff; text-decoration: none; box-shadow: 0 2px 8px rgba(66,165,133,0.15); transition: background 0.2s;">
+    <a href="#/overview" style="display: inline-block; padding: 0.85rem 2rem; font-size: 1.1rem; font-weight: 600; border-radius: 12px; background: linear-gradient(135deg, #42a585 0%, #61dafb 100%); color: #fff; text-decoration: none; box-shadow: 0 2px 8px rgba(66,165,133,0.15); transition: background 0.2s;">
         Get Started
     </a>
     <a href="https://github.com/orgs/finsible/repositories" style="display: inline-block; padding: 0.85rem 2rem; font-size: 1.1rem; font-weight: 600; border-radius: 12px; background: linear-gradient(135deg, #24292f 0%, #42a585 100%); color: #fff; text-decoration: none; box-shadow: 0 2px 8px rgba(36,41,47,0.15); transition: background 0.2s;">
