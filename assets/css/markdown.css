@@ -1,0 +1,156 @@
+.markdown-section h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    margin-bottom: var(--spacing-lg);
+    background: linear-gradient(135deg, #42a585 0%, #61dafb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.markdown-section a {
+    color: #42a585 !important;
+    font-weight: 600;
+    transition: color 0.3s ease !important;
+}
+
+.markdown-section a:hover {
+    color: #61dafb !important;
+    text-shadow: 0 2px 8px #61dafb;
+}
+
+/* Exempt links within headings */
+.markdown-section h1 a,
+.markdown-section h2 a,
+.markdown-section h3 a,
+.markdown-section h4 a {
+    color: inherit !important;
+    font-weight: inherit !important;
+    transition: none !important;
+    text-shadow: none !important;
+}
+
+.markdown-section h2,
+.markdown-section h3,
+.markdown-section h4 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    position: relative;
+}
+
+.markdown-section p,
+.markdown-section li {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+.markdown-section code {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+    background: rgba(66, 165, 133, 0.1);
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(66, 165, 133, 0.2);
+}
+
+.markdown-section table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, rgba(66, 165, 133, 0.03) 0%, rgba(13, 17, 23, 0.95) 100%);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(66, 165, 133, 0.15);
+    width: auto;
+    max-width: 100%;
+    display: table;
+    overflow: hidden;
+}
+
+.markdown-section table th {
+    background: linear-gradient(135deg, rgba(66, 165, 133, 0.12) 0%, rgba(66, 165, 133, 0.08) 100%);
+    color: #42a585;
+    color: #42a585;
+    font-weight: 700;
+    padding: 16px 20px;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+    border: none;
+    border-bottom: 2px solid rgba(66, 165, 133, 0.2);
+}
+
+.markdown-section table th:first-child {
+    border-top-left-radius: 12px;
+}
+
+.markdown-section table th:last-child {
+    border-top-right-radius: 12px;
+}
+
+.markdown-section table td {
+    padding: 14px 20px;
+    font-family: 'Roboto', sans-serif;
+    background: transparent;
+    border: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    color: #e6edf3;
+    transition: background-color 0.3s ease;
+}
+
+.markdown-section table td:first-child {
+    border-left: none;
+}
+
+.markdown-section table td:last-child {
+    border-right: none;
+}
+
+.markdown-section table tr:last-child td {
+    border-bottom: none;
+}
+
+.markdown-section table tr:last-child td:first-child {
+    border-bottom-left-radius: 12px;
+}
+
+.markdown-section table tr:last-child td:last-child {
+    border-bottom-right-radius: 12px;
+}
+
+.markdown-section table tr:hover {
+    background: transparent;
+}
+
+.markdown-section table tr:hover td {
+    background: rgba(66, 165, 133, 0.08);
+}
+
+.markdown-section table tbody tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.markdown-section table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.markdown-section table tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.markdown-section table tbody tr:nth-child(even):hover td {
+    background: rgba(66, 165, 133, 0.1);
+}
+
+.markdown-section img[alt*='badge'] {
+    margin: 3px;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-fast) ease;
+}
+
+.markdown-section img[alt*='badge']:hover {
+    transform: translateY(-1px);
+}

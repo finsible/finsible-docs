@@ -1,0 +1,439 @@
+.sidebar {
+    width: var(--sidebar-width) !important;
+    min-width: var(--sidebar-min-width) !important;
+    max-width: var(--sidebar-max-width) !important;
+    resize: horizontal;
+    overflow: auto;
+    border-right: 2px solid var(--theme-color);
+    background: linear-gradient(180deg, rgba(66, 165, 133, 0.05) 0%, rgba(66, 165, 133, 0.02) 100%);
+    backdrop-filter: blur(10px);
+}
+
+/* Hide SVG icons in sidebar navigation */
+.sidebar .sidebar-nav svg {
+    display: none !important;
+}
+
+.sidebar .app-name {
+    text-align: left !important;
+}
+
+/* App name styling */
+.app-name,
+.app-name-link {
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+    text-align: left !important;
+    letter-spacing: 0.5px;
+    margin: 0 !important;
+    padding: 1.25rem 1rem 0.5rem 1rem !important;
+    display: block !important;
+    background: linear-gradient(135deg, #42a585 0%, #61dafb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all var(--transition-normal) ease;
+    text-decoration: none;
+}
+
+.app-name:hover,
+.app-name-link:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.1);
+}
+
+/* Sidebar navigation container */
+.sidebar-nav {
+    padding: var(--spacing-md);
+}
+
+.sidebar-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav>ul>li {
+    margin-bottom: var(--spacing-md);
+}
+
+/* Section headers (bold text) - ONLY target actual strong/bold elements that are NOT inside links */
+.sidebar-nav strong:not(:has(a)):not(a):not(li a strong),
+.sidebar-nav>ul>li>p:not(:has(a)):not(a) {
+    display: block;
+    font-weight: 700;
+    color: var(--theme-color);
+    margin: var(--spacing-lg) 0 var(--spacing-sm) 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: linear-gradient(135deg, rgba(66, 165, 133, 0.15) 0%, rgba(66, 165, 133, 0.08) 100%);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--theme-color);
+    box-shadow: 0 2px 6px rgba(66, 165, 133, 0.1);
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+}
+
+/* First section header should not have top margin */
+.sidebar-nav strong:not(:has(a)):not(a):not(li a strong):first-of-type,
+.sidebar-nav>ul>li:first-child>p:not(:has(a)):not(a) {
+    margin-top: 0;
+}
+
+/* Section header hover effect */
+.sidebar-nav strong:not(:has(a)):not(a):not(li a strong)::before,
+.sidebar-nav>ul>li>p:not(:has(a)):not(a)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 0%, rgba(97, 218, 251, 0.05) 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity var(--transition-normal) ease;
+}
+
+.sidebar-nav strong:not(:has(a)):not(a):not(li a strong):hover::before,
+.sidebar-nav>ul>li>p:not(:has(a)):not(a):hover::before {
+    opacity: 1;
+}
+
+/* Reset ALL potential section header inheritance for ANY element inside links */
+.sidebar-nav a,
+.sidebar-nav a *,
+.sidebar-nav li a,
+.sidebar-nav li a *,
+.sidebar-nav a strong,
+.sidebar-nav a p,
+.sidebar-nav li a strong,
+.sidebar-nav li a p {
+    /* Reset typography */
+    font-weight: 500 !important;
+    font-size: 0.9rem !important;
+    color: var(--base-color) !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    font-family: 'Roboto', sans-serif !important;
+
+    /* Reset layout */
+    background: transparent !important;
+    border: none !important;
+    border-left: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+
+    /* Reset positioning */
+    position: static !important;
+    overflow: visible !important;
+}
+
+/* Navigation links - COMPLETE isolation from section header styles */
+.sidebar-nav a {
+    display: flex !important;
+    align-items: center !important;
+    padding: 12px var(--spacing-md) !important;
+    margin: 3px 0 !important;
+    border-radius: var(--radius-md) !important;
+    transition: all var(--transition-normal) cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+
+    /* Typography - FORCE override any inheritance */
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 0.9rem !important;
+    color: var(--base-color) !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+
+    /* Layout - RESET any section header styles */
+    background: transparent !important;
+    border: 1px solid transparent !important;
+    border-left: none !important;
+    box-shadow: none !important;
+}
+
+/* Ensure ANY content inside links follows link styling */
+.sidebar-nav a *,
+.sidebar-nav a strong,
+.sidebar-nav a span,
+.sidebar-nav a p {
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    font-size: inherit !important;
+    color: inherit !important;
+    text-transform: inherit !important;
+    letter-spacing: inherit !important;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    position: static !important;
+}
+
+/* Link hover state - consistent side raise decoration */
+.sidebar-nav a:hover {
+    background: transparent !important;
+    transform: translateX(4px);
+    color: #ffffff !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Active/current page state - bold text and shadow for clarity */
+.sidebar-nav a.active,
+.sidebar-nav a[aria-current='page'],
+.sidebar-nav .active>a,
+.sidebar-nav li.active>a {
+    background: transparent !important;
+    color: var(--theme-color) !important;
+    font-weight: 700 !important;
+    text-shadow: 0 2px 8px rgba(66, 165, 133, 0.5);
+    border-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Active state hover - maintain bold and add side raise */
+.sidebar-nav a.active:hover,
+.sidebar-nav a[aria-current='page']:hover,
+.sidebar-nav .active>a:hover,
+.sidebar-nav li.active>a:hover {
+    transform: translateX(4px);
+    font-weight: 700 !important;
+    color: var(--theme-color-secondary-light) !important;
+    text-shadow: 0 2px 12px rgba(97, 218, 251, 0.6);
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Focus states for accessibility - consistent with hover */
+.sidebar-nav a:focus {
+    outline: 2px solid var(--theme-color-secondary-light);
+    outline-offset: 2px;
+    background: transparent !important;
+    transform: translateX(4px);
+    color: #ffffff !important;
+}
+
+.sidebar-nav a:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Enhanced transitions for smoother feel */
+.sidebar-nav a {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.sidebar-nav a::before {
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* External links styling (GitHub links) - consistent with other links */
+.sidebar-nav a[href^="https://"] {
+    position: relative;
+    background: transparent !important;
+}
+
+.sidebar-nav a[href^="https://"]::after {
+    content: '↗';
+    font-size: 0.75rem;
+    opacity: 0.6;
+    margin-left: auto;
+    padding-left: var(--spacing-sm);
+    transition: all var(--transition-fast) ease;
+    transform: scale(0.9);
+}
+
+.sidebar-nav a[href^="https://"]:hover {
+    background: transparent !important;
+    transform: translateX(4px);
+    color: #ffffff !important;
+}
+
+.sidebar-nav a[href^="https://"]:hover::after {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Nested navigation (if any) - improved */
+.sidebar-nav ul ul {
+    margin-left: var(--spacing-md);
+    padding-left: var(--spacing-md);
+    border-left: 2px solid rgba(66, 165, 133, 0.15);
+    position: relative;
+}
+
+.sidebar-nav ul ul::before {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--theme-color) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity var(--transition-normal) ease;
+}
+
+.sidebar-nav ul ul:hover::before {
+    opacity: 1;
+}
+
+.sidebar-nav ul ul a {
+    font-size: 0.85rem !important;
+    padding: 8px var(--spacing-sm) !important;
+    opacity: 0.9;
+    margin: 1px 0 !important;
+}
+
+.sidebar-nav ul ul a:hover {
+    opacity: 1;
+    transform: translateX(2px);
+    background: transparent !important;
+    font-weight: 600 !important;
+    text-shadow: 0 1px 6px rgba(66, 165, 133, 0.3);
+}
+
+.sidebar-nav ul ul a::before {
+    display: none;
+}
+
+/* Micro-interaction improvements */
+.sidebar-nav a:active {
+    transform: scale(0.98) translateX(1px);
+    transition: all 0.1s ease;
+}
+
+/* Text selection disable for better UX */
+.sidebar-nav {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Ensure no bleed-through of styles between sections and links */
+.sidebar-nav>ul>li>ul>li>a,
+.sidebar-nav li a {
+    /* Reset any potential inheritance */
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    font-weight: 500 !important;
+    color: var(--base-color) !important;
+}
+
+.search {
+    position: relative;
+    margin-bottom: var(--spacing-md);
+}
+
+.search .input-wrap {
+    background: linear-gradient(135deg, rgba(66, 165, 133, 0.12) 0%, rgba(97, 218, 251, 0.08) 100%);
+    border: 2px solid rgba(66, 165, 133, 0.2);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-normal) ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+}
+
+.search .input-wrap::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 0%, rgba(97, 218, 251, 0.1) 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity var(--transition-normal) ease;
+}
+
+.search .input-wrap:focus-within {
+    border-color: var(--theme-color);
+    box-shadow: 0 0 0 4px rgba(66, 165, 133, 0.15), 0 4px 12px rgba(66, 165, 133, 0.2);
+    transform: translateY(-1px);
+}
+
+.search .input-wrap:focus-within::before {
+    opacity: 1;
+}
+
+.search input {
+    background: transparent !important;
+    border: none !important;
+    color: var(--base-color) !important;
+    font-family: 'Roboto', sans-serif !important;
+    font-weight: 500 !important;
+    padding: 12px 16px !important;
+    font-size: 0.9rem !important;
+    width: 100% !important;
+    position: relative;
+    z-index: 2;
+}
+
+.search input::placeholder {
+    color: rgba(230, 237, 243, 0.6) !important;
+    font-style: italic;
+}
+
+.search input:focus {
+    outline: none !important;
+    color: #ffffff !important;
+}
+
+.search .clear-button {
+    align-self: center;
+}
+
+/* Search results */
+.search .results-panel {
+    background: rgba(22, 27, 34, 0.95) !important;
+    border: 1px solid rgba(66, 165, 133, 0.3) !important;
+    border-radius: var(--radius-md) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+    backdrop-filter: blur(12px) !important;
+    margin-top: 4px !important;
+    z-index: 100;
+}
+
+.search .results-panel .matching-post {
+    border-bottom: 1px solid rgba(66, 165, 133, 0.1) !important;
+    transition: all var(--transition-fast) ease !important;
+    padding: 12px 16px !important;
+}
+
+.search .results-panel .matching-post:hover {
+    background: rgba(66, 165, 133, 0.1) !important;
+    transform: translateX(2px) !important;
+}
+
+.search .results-panel .matching-post:last-child {
+    border-bottom: none !important;
+}
+
+.search .results-panel .matching-post h2 {
+    color: var(--theme-color) !important;
+    font-size: 0.9rem !important;
+    margin: 0 0 4px 0 !important;
+}
+
+.search .results-panel .matching-post p {
+    color: var(--base-color) !important;
+    font-size: 0.8rem !important;
+    margin: 0 !important;
+    opacity: 0.8;
+}

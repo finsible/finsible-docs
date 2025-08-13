@@ -1,0 +1,48 @@
+.cover {
+    background: radial-gradient(ellipse at center, #0f1419 0%, #0d1117 100%) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    min-height: 100vh !important;
+}
+
+.cover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(66, 165, 133, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(97, 218, 251, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 60% 40%, rgba(66, 165, 133, 0.05) 0%, transparent 50%);
+    z-index: 1;
+}
+
+.cover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.cover .cover-main {
+    width: 90% !important;
+    max-width: 90% !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    z-index: 10 !important;
+    backdrop-filter: blur(4px) !important;
+    background: rgba(13, 17, 23, 0.3) !important;
+    border-radius: var(--radius-xl) !important;
+    padding: var(--spacing-xxl) var(--spacing-xl) !important;
+    border: 1px solid rgba(66, 165, 133, 0.2) !important;
+    box-shadow: var(--shadow-lg) !important;
+}
+
+.cover .cover-main>* {
+    max-width: 100%;
+}
